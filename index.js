@@ -25,11 +25,11 @@ mongoose
 
         // create one new recipe
 
-        // return Recipe.create({
-        //     title: 'new recipe',
-        //     ingredients: 'banana',
-        //     cuisine: 'simple'
-        // });
+        return Recipe.create({
+            title: 'new recipe',
+            ingredients: 'banana',
+            cuisine: 'simple'
+        });
 
         // add an array of recipes
 
@@ -43,10 +43,11 @@ mongoose
 
         // delete a recipe
 
-        return Recipe.findOneAndDelete({ title: 'Carrot Cake' });
+        // return Recipe.findOneAndDelete({ title: 'Carrot Cake' });
     })
-    .then(() => {
-        console.log('recipe successfully deleted! ');
+    .then((r) => {
+        console.log('recipe successfully created! ');
+        console.log(r);
 
         return mongoose.disconnect();
     })
